@@ -1,4 +1,4 @@
-FROM jenkinsci/docker-ssh-slave
+FROM jenkinsci/ssh-slave
 MAINTAINER Wang Sheng <shengw1127@gmail.com>
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
