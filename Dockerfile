@@ -29,5 +29,8 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN mkdir ${JENKINS_AGENT_HOME}/.npm-global && \
-  npm config set prefix ${JENKINS_AGENT_HOME}/.npm-global
+# install node-gyp
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y python krb5 krb5-libs gcc make g++ krb5-dev \
+    && apt-get clean
+RUN npm install -g node-gyp
