@@ -31,6 +31,6 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 # install node-gyp
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y python krb5 krb5-libs gcc make g++ krb5-dev \
+    && apt-get install --no-install-recommends -y python build-essential \
     && apt-get clean
 RUN npm install -g node-gyp
