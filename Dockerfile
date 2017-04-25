@@ -1,4 +1,4 @@
-FROM jenkinsci/ssh-slave
+FROM wangsheng/jenkins-slave-maven
 MAINTAINER Wang Sheng <shengw1127@gmail.com>
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
